@@ -19,8 +19,14 @@ public class EmployeeHandler {
     @Autowired
     private DepartmentDao departmentDao;
 
-    @RequestMapping(value = "emp", method = RequestMethod.GET)
-    public String input(Map<String, Object> map){
+    @RequestMapping(value = "/emp", method = RequestMethod.POST)
+    public String save(Employee employee){
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+
+    @RequestMapping(value = "/emp", method = RequestMethod.GET)
+    public String input(Map<String, Object> map) {
         map.put("departments", departmentDao.getDepartments());
         map.put("employee", new Employee());
         return "input";

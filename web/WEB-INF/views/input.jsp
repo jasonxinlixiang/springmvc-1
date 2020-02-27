@@ -35,9 +35,9 @@
 
             request.setAttribute("genders", genders);
         %>
-        Gender<form:radiobuttons path="gender" items="${genders }"/>
+        Gender:<form:radiobuttons path="gender" items="${genders }"/>
         <br>
-        Department:<form:select path="department"
+        Department:<form:select path="department.id"
                                 items="${departments}" itemLabel="departmentName" itemValue="id"/>
         <br>
         <input type="submit" value="Submit">
