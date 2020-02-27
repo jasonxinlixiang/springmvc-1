@@ -10,8 +10,24 @@
 <html>
 <head>
     <title>Title</title>
+
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".delete").click(function(){
+                var href = $(this).attr("href");
+                $("form").attr("action", href).submit();
+                return false;
+            });
+        })
+    </script>
 </head>
 <body>
+
+
+<form action="" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+</form>
 
 <c:if test="${empty requestScope.employees}">
     No employees information
@@ -35,7 +51,7 @@
                 <td>${emp.gender == 0? 'Female' : 'Male'}</td>
                 <td>${emp.department.departmentName}</td>
                 <td><a href="">Edit</a></td>
-                <td><a href="">Delete</a></td>
+                <td><a class="delete" href="emp/${emp.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
