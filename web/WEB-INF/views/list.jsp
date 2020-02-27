@@ -40,5 +40,8 @@
         </c:forEach>
     </table>
 </c:if>
+
+<br><br>
+<a href="emp">Add New Employee</a>
 </body>
 </html>
