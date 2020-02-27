@@ -1,6 +1,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: xiangxinli
@@ -22,9 +23,17 @@
         可以通过modelAttribute 属性指定绑定的模型属性，若没有指定该属性，则默认从request域对象中读取command的表单bean.
         如果该属性值也不存在，则会发生错误。
     -->
-    <form:form action="emp" method="post" modelAttribute="employee">
-        <!-- path属性对应HTML表单标签的name属性值 -->
-        LastName:<form:input path="lastName"/>
+    <form:form action="${pageContext.request.contextPath }/emp" method="post" modelAttribute="employee">
+
+        <c:if test="${employee.id == null}">
+            <!-- path属性对应HTML表单标签的name属性值 -->
+            LastName:<form:input path="lastName"/>
+        </c:if>
+        <c:if test="${employee.id != null}">
+            <form:hidden path="id"/>
+            <input type="hidden" name="_method" value="PUT"/>
+        </c:if>
+
         <br>
         Email:<form:input path="email"/>
         <br>
