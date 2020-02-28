@@ -26,4 +26,9 @@
         </property>
     </bean>
 
+<!--    <mvc:interceptors>-->
+<!--        &lt;!&ndash; 配置自定义的拦截器 &ndash;&gt;-->
+<!--        <bean class="com.atguigu.springmvc.interceptors.FirstInterceptor"></bean>-->
+<!--    </mvc:interceptors>-->
+
 </beans>

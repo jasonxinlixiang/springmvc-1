@@ -33,9 +33,12 @@
     -->
     <form:form action="${pageContext.request.contextPath }/emp" method="post" modelAttribute="employee">
 
+        <form:errors path="*" />
+
         <c:if test="${employee.id == null}">
             <!-- path属性对应HTML表单标签的name属性值 -->
             LastName:<form:input path="lastName"/>
+            <form:errors path="lastName" />
         </c:if>
         <c:if test="${employee.id != null}">
             <form:hidden path="id"/>
@@ -44,6 +47,7 @@
 
         <br>
         Email:<form:input path="email"/>
+        <form:errors path="email" />
         <br>
         <%
             Map<String, String> genders = new HashMap<String, String>();
@@ -72,6 +76,7 @@
             3）错误消息？如何显示？如何把错误消息进行国际化？
         -->
         Birth:<form:input path="birth" />
+        <form:errors path="birth" />
         <br>
         Salary:<form:input path="salary" />
         <br>
