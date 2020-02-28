@@ -57,13 +57,16 @@
         Department:<form:select path="department.id"
                                 items="${departments}" itemLabel="departmentName" itemValue="id"/>
         <br>
-        Birth:<form:input path="birth" />
-        <br>
+
         <!--
             1. 数据类型转换
             2. 数据类型格式化的问题
             3. 数据校验
         -->
+        Birth:<form:input path="birth" />
+        <br>
+        Salary:<form:input path="salary" />
+        <br>
         <input type="submit" value="Submit">
     </form:form>
 </body>
