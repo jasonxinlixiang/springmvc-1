@@ -15,6 +15,15 @@
     </bean>
 
     <mvc:default-servlet-handler />
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- 配置ConversionService -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="employeeConverter"/>
+            </set>
+        </property>
+    </bean>
 
 </beans>

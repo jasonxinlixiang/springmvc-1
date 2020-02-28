@@ -16,6 +16,14 @@
 </head>
 <body>
 
+    <form action="testConversionServiceConverer" method="post">
+        <!-- lastname-email-gender-department.id 例如：GG-gg@atguigu.com--0-105-->
+        Employee:<input type="text" name="employee">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+
+
     <!--
         1. WHY 使用 form标签？
         可以更快速的开发出表单页面，而且可以更方便的进行表单值的回显
@@ -49,6 +57,13 @@
         Department:<form:select path="department.id"
                                 items="${departments}" itemLabel="departmentName" itemValue="id"/>
         <br>
+        Birth:<form:input path="birth" />
+        <br>
+        <!--
+            1. 数据类型转换
+            2. 数据类型格式化的问题
+            3. 数据校验
+        -->
         <input type="submit" value="Submit">
     </form:form>
 </body>
