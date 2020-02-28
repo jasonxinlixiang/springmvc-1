@@ -62,6 +62,14 @@
             1. 数据类型转换
             2. 数据类型格式化的问题
             3. 数据校验
+            1) 如何校验？注解？
+            使用JSR303验证标准
+            加入hibdernate validator验证框架jar包
+            在SpringMVC配置文件中配置添加mvc:annotation-driven
+            需要在bean的属性上添加对应的注解
+            在目标方法bean类型的前面添加@Valid注解
+            2）验证出错转向到哪个页面？
+            3）错误消息？如何显示？如何把错误消息进行国际化？
         -->
         Birth:<form:input path="birth" />
         <br>
