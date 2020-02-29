@@ -32,5 +32,7 @@
   <a href="emps">List All Employees</a>
   <br><br>
   <a href="testJson" id="testJson">Test Json</a>
+  <br><br>
+  <a href="testExceptionHandlerExceptionResolver?i=10" >test ExceptionHandlerExceptionResolver</a>
   </body>
 </html>
