@@ -12,6 +12,6 @@
 </head>
 <body>
 <h4>error page</h4>
-${exception }
+${requestScope.ex}
 </body>
 </html>

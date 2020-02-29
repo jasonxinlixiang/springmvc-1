@@ -36,5 +36,9 @@
   <a href="testExceptionHandlerExceptionResolver?i=10" >test ExceptionHandlerExceptionResolver</a>
   <br><br>
   <a href="testResponseStatusExceptionResolver?i=10" >test ResponseStatusExceptionResolver</a>
+  <br><br>
+  <a href="testDefaultHandlerExceptionResolver" >test DefaultHandlerExceptionResolver</a>
+  <br><br>
+  <a href="testSimpleMappingExceptionResolver?i=2" >test SimpleMappingExceptionResolver</a>
   </body>
 </html>

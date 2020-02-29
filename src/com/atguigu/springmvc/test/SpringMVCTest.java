@@ -17,6 +17,19 @@ public class SpringMVCTest {
     @Autowired
     private EmployeeDao employeeDao;
 
+    @RequestMapping("/testSimpleMappingExceptionResolver")
+    public String testSimpleMappingExceptionResolver(@RequestParam("i") int i){
+        String[] vals = new String[10];
+        System.out.println(vals[i]);
+        return "success";
+    }
+
+    @RequestMapping(value = "/testDefaultHandlerExceptionResolver" , method = RequestMethod.POST)
+    public String testDefaultHandlerExceptionResolver(){
+        System.out.println("testDefaultHandlerExceptionResolver...");
+        return "success";
+    }
+
     //@ResponseStatus(reason = "测试", value = HttpStatus.NOT_FOUND)
     @RequestMapping("/testResponseStatusExceptionResolver")
     public String testResponseStatusExceptionResolver(@RequestParam("i") int i){
