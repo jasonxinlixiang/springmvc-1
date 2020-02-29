@@ -3,11 +3,9 @@ package com.atguigu.springmvc.test;
 import com.atguigu.springmvc.crud.dao.EmployeeDao;
 import com.atguigu.springmvc.crud.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collection;
@@ -18,6 +16,16 @@ public class SpringMVCTest {
 
     @Autowired
     private EmployeeDao employeeDao;
+
+    //@ResponseStatus(reason = "测试", value = HttpStatus.NOT_FOUND)
+    @RequestMapping("/testResponseStatusExceptionResolver")
+    public String testResponseStatusExceptionResolver(@RequestParam("i") int i){
+        if (i == 13){
+            throw new UserNameNotMatchPasswordException();
+        }
+        System.out.println("testResponseStatusExceptionResolver....");
+        return "success";
+    }
 
 //    @ExceptionHandler({RuntimeException.class})
 //    public ModelAndView handleArithmeticException2(Exception ex){

@@ -1,10 +1,11 @@
 package com.atguigu.springmvc.test;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
-public class ExceptionHandler {
+public class SpringMVCTestExceptionHandler {
 
     /**
      * 1. 在 @ExceptionHandler 方法的入参中可以加入 Exception 类型的参数，该参数即对应的发生的异常对象
@@ -15,7 +16,7 @@ public class ExceptionHandler {
      * @param ex
      * @return
      */
-    @org.springframework.web.bind.annotation.ExceptionHandler({ArithmeticException.class})
+    @ExceptionHandler({ArithmeticException.class})
     public ModelAndView handleArithmeticException(Exception ex){
         System.out.println("Exception occurred!!" + ex);
         ModelAndView mv = new ModelAndView("error");
